@@ -1,0 +1,73 @@
+[{
+	"_id": "59cb84e1715289b5930587fc",
+	"id_region": 38,
+	"name": "Oriental",
+	"provinces": null,
+	"id": "59cb84e1715289b5930587fc"
+}, {
+	"_id": "59cb84e1715289b5930587ff",
+	"id_region": 37,
+	"name": "Tanger-Tétouan-Al Hoceima",
+	"provinces": null,
+	"id": "59cb84e1715289b5930587ff"
+}, {
+	"_id": "59cb84e1715289b593058960",
+	"id_region": 46,
+	"name": "Guelmim-Oued Noun",
+	"provinces": null,
+	"id": "59cb84e1715289b593058960"
+}, {
+	"_id": "59cb84e1715289b593058961",
+	"id_region": 48,
+	"name": "Eddakhla-Oued Eddahab",
+	"provinces": null,
+	"id": "59cb84e1715289b593058961"
+}, {
+	"_id": "59cb84e1715289b593058976",
+	"id_region": 41,
+	"name": "Béni Mellal-Khénifra",
+	"provinces": null,
+	"id": "59cb84e1715289b593058976"
+}, {
+	"_id": "59cb84e1715289b593058977",
+	"id_region": 44,
+	"name": "Drâa-Tafilalet",
+	"provinces": null,
+	"id": "59cb84e1715289b593058977"
+}, {
+	"_id": "59cb84e1715289b593058978",
+	"id_region": 43,
+	"name": "Marrakech-Safi",
+	"provinces": null,
+	"id": "59cb84e1715289b593058978"
+}, {
+	"_id": "59cb84e1715289b593058979",
+	"id_region": 42,
+	"name": "Grand Casablanca-Settat",
+	"provinces": null,
+	"id": "59cb84e1715289b593058979"
+}, {
+	"_id": "59cb84e1715289b59305897a",
+	"id_region": 39,
+	"name": "Fés-Meknés",
+	"provinces": null,
+	"id": "59cb84e1715289b59305897a"
+}, {
+	"_id": "59cb84e1715289b593058983",
+	"id_region": 47,
+	"name": "Laayoune-Sakia El Hamra",
+	"provinces": null,
+	"id": "59cb84e1715289b593058983"
+}, {
+	"_id": "59cb84e1715289b593058984",
+	"id_region": 40,
+	"name": "Rabat-Salé-Kénitra",
+	"provinces": null,
+	"id": "59cb84e1715289b593058984"
+}, {
+	"_id": "59cb84e1715289b593058987",
+	"id_region": 45,
+	"name": "Souss-Massa",
+	"provinces": null,
+	"id": "59cb84e1715289b593058987"
+}]

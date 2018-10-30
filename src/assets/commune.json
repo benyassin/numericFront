@@ -1,0 +1,61 @@
+[{
+	"_id": "59cb883b715289b59308ecf0",
+	"id_commune": 5914,
+	"name": "Agdal",
+	"id_region": 39,
+	"id": "59cb883b715289b59308ecf0"
+}, {
+	"_id": "59cb883f715289b59308f339",
+	"id_commune": 5922,
+	"name": "Ain Bida",
+	"id_region": 39,
+	"id": "59cb883f715289b59308f339"
+}, {
+	"_id": "59cb883c715289b59308ee01",
+	"id_commune": 5919,
+	"name": "El Mariniyine",
+	"id_region": 39,
+	"id": "59cb883c715289b59308ee01"
+}, {
+	"_id": "59cb883b715289b59308ec18",
+	"id_commune": 5917,
+	"name": "Fés-Médina",
+	"id_region": 39,
+	"id": "59cb883b715289b59308ec18"
+}, {
+	"_id": "59cb883b715289b59308ebab",
+	"id_commune": 5918,
+	"name": "Jnan El Ouard",
+	"id_region": 39,
+	"id": "59cb883b715289b59308ebab"
+}, {
+	"_id": "59cb883a715289b59308eb1a",
+	"id_commune": 5915,
+	"name": "Méchouar-Fés Jdid",
+	"id_region": 39,
+	"id": "59cb883a715289b59308eb1a"
+}, {
+	"_id": "59cb8841715289b59308f4d5",
+	"id_commune": 5921,
+	"name": "Oulad Tayeb",
+	"id_region": 39,
+	"id": "59cb8841715289b59308f4d5"
+}, {
+	"_id": "59cb883a715289b59308eb08",
+	"id_commune": 5916,
+	"name": "Saiss",
+	"id_region": 39,
+	"id": "59cb883a715289b59308eb08"
+}, {
+	"_id": "59cb8843715289b59308f7f8",
+	"id_commune": 5923,
+	"name": "Sidi Harazem",
+	"id_region": 39,
+	"id": "59cb8843715289b59308f7f8"
+}, {
+	"_id": "59cb883b715289b59308ec80",
+	"id_commune": 5920,
+	"name": "Zouagha",
+	"id_region": 39,
+	"id": "59cb883b715289b59308ec80"
+}]

@@ -1,0 +1,376 @@
+[{
+	"_id": "59cb861e715289b59306c825",
+	"id_province": 326,
+	"name": "Fés",
+	"id_region": 39
+}, {
+	"_id": "59cb861e715289b59306c826",
+	"id_province": 336,
+	"name": "Khénifra",
+	"id_region": 41
+}, {
+	"_id": "59cb861e715289b59306c827",
+	"id_province": 335,
+	"name": "Khémisset",
+	"id_region": 40
+}, {
+	"_id": "59cb861e715289b59306c828",
+	"id_province": 334,
+	"name": "Kénitra",
+	"id_region": 40
+}, {
+	"_id": "59cb861e715289b59306c829",
+	"id_province": 325,
+	"name": "Fahs-Anjra",
+	"id_region": 37
+}, {
+	"_id": "59cb861e715289b59306c82a",
+	"id_province": 327,
+	"name": "Figuig",
+	"id_region": 38
+}, {
+	"_id": "59cb861e715289b59306c82b",
+	"id_province": 328,
+	"name": "Fquih Ben Salah",
+	"id_region": 41
+}, {
+	"_id": "59cb861e715289b59306c82c",
+	"id_province": 329,
+	"name": "Guelmim",
+	"id_region": 46
+}, {
+	"_id": "59cb861e715289b59306c82d",
+	"id_province": 330,
+	"name": "Guercif",
+	"id_region": 38
+}, {
+	"_id": "59cb861e715289b59306c82e",
+	"id_province": 331,
+	"name": "Ifrane",
+	"id_region": 39
+}, {
+	"_id": "59cb861e715289b59306c84e",
+	"id_province": 332,
+	"name": "Inezgane Ait Melloul",
+	"id_region": 45
+}, {
+	"_id": "59cb861e715289b59306c84f",
+	"id_province": 333,
+	"name": "Jerada",
+	"id_region": 38
+}, {
+	"_id": "59cb861e715289b59306c850",
+	"id_province": 337,
+	"name": "Khouribga",
+	"id_region": 41
+}, {
+	"_id": "59cb861e715289b59306c851",
+	"id_province": 355,
+	"name": "Settat",
+	"id_region": 42
+}, {
+	"_id": "59cb861e715289b59306c852",
+	"id_province": 356,
+	"name": "Sidi Bennour",
+	"id_region": 42
+}, {
+	"_id": "59cb861e715289b59306c853",
+	"id_province": 357,
+	"name": "Sidi Ifni",
+	"id_region": 46
+}, {
+	"_id": "59cb861e715289b59306c854",
+	"id_province": 358,
+	"name": "Sidi Kacem",
+	"id_region": 40
+}, {
+	"_id": "59cb861e715289b59306c855",
+	"id_province": 359,
+	"name": "Sidi Slimane",
+	"id_region": 40
+}, {
+	"_id": "59cb861e715289b59306c856",
+	"id_province": 360,
+	"name": "Skhirate- Témara",
+	"id_region": 40
+}, {
+	"_id": "59cb861e715289b59306c857",
+	"id_province": 361,
+	"name": "Tanger -Assilah",
+	"id_region": 37
+}, {
+	"_id": "59cb861e715289b59306c858",
+	"id_province": 363,
+	"name": "Taounate",
+	"id_region": 39
+}, {
+	"_id": "59cb861f715289b59306c866",
+	"id_province": 364,
+	"name": "Taourirt",
+	"id_region": 38
+}, {
+	"_id": "59cb861f715289b59306c867",
+	"id_province": 304,
+	"name": "Meknés",
+	"id_region": 39
+}, {
+	"_id": "59cb861f715289b59306c89e",
+	"id_province": 369,
+	"name": "Tétouan",
+	"id_region": 37
+}, {
+	"_id": "59cb861f715289b59306c89f",
+	"id_province": 301,
+	"name": "Agadir Ida Ou Tanane",
+	"id_region": 45
+}, {
+	"_id": "59cb861f715289b59306c8a0",
+	"id_province": 302,
+	"name": "Al Haouz",
+	"id_region": 43
+}, {
+	"_id": "59cb861f715289b59306c8a1",
+	"id_province": 303,
+	"name": "Al Hoceima",
+	"id_region": 37
+}, {
+	"_id": "59cb861f715289b59306c8ba",
+	"id_province": 305,
+	"name": "Aousserd",
+	"id_region": 48
+}, {
+	"_id": "59cb861f715289b59306c8d6",
+	"id_province": 366,
+	"name": "Taroudannt",
+	"id_region": 45
+}, {
+	"_id": "59cb861f715289b59306c8e0",
+	"id_province": 367,
+	"name": "Tata",
+	"id_region": 45
+}, {
+	"_id": "59cb861f715289b59306c957",
+	"id_province": 368,
+	"name": "Taza",
+	"id_region": 39
+}, {
+	"_id": "59cb861f715289b59306c958",
+	"id_province": 370,
+	"name": "Mdiq - Fnidq",
+	"id_region": 37
+}, {
+	"_id": "59cb861f715289b59306c959",
+	"id_province": 371,
+	"name": "Tinghir",
+	"id_region": 44
+}, {
+	"_id": "59cb861f715289b59306c95a",
+	"id_province": 372,
+	"name": "Tiznit",
+	"id_region": 45
+}, {
+	"_id": "59cb861f715289b59306c95b",
+	"id_province": 373,
+	"name": "Youssoufia",
+	"id_region": 43
+}, {
+	"_id": "59cb861f715289b59306c95c",
+	"id_province": 374,
+	"name": "Zagora",
+	"id_region": 44
+}, {
+	"_id": "59cb861f715289b59306c96a",
+	"id_province": 375,
+	"name": "Moulay Yacoub",
+	"id_region": 39
+}, {
+	"_id": "59cb861f715289b59306c96b",
+	"id_province": 321,
+	"name": "El Kelâa des  Sraghna",
+	"id_region": 43
+}, {
+	"_id": "59cb861f715289b59306c973",
+	"id_province": 307,
+	"name": "Azilal",
+	"id_region": 41
+}, {
+	"_id": "59cb861f715289b59306c97a",
+	"id_province": 308,
+	"name": "Béni Mellal",
+	"id_region": 41
+}, {
+	"_id": "59cb861f715289b59306c97b",
+	"id_province": 309,
+	"name": "Benslimane",
+	"id_region": 42
+}, {
+	"_id": "59cb861f715289b59306c97c",
+	"id_province": 310,
+	"name": "Berkane",
+	"id_region": 38
+}, {
+	"_id": "59cb861f715289b59306c97d",
+	"id_province": 311,
+	"name": "Berrechid",
+	"id_region": 42
+}, {
+	"_id": "59cb861f715289b59306c97e",
+	"id_province": 313,
+	"name": "Boulemane",
+	"id_region": 39
+}, {
+	"_id": "59cb861f715289b59306c980",
+	"id_province": 314,
+	"name": "Casablanca",
+	"id_region": 42
+}, {
+	"_id": "59cb861f715289b59306c982",
+	"id_province": 315,
+	"name": "Chefchaouen",
+	"id_region": 37
+}, {
+	"_id": "59cb861f715289b59306c98b",
+	"id_province": 316,
+	"name": "Chichaoua",
+	"id_region": 43
+}, {
+	"_id": "59cb861f715289b59306c9b8",
+	"id_province": 317,
+	"name": "Chtouka- Ait Baha",
+	"id_region": 45
+}, {
+	"_id": "59cb861f715289b59306c9c3",
+	"id_province": 318,
+	"name": "Driouch",
+	"id_region": 38
+}, {
+	"_id": "59cb861f715289b59306c9c4",
+	"id_province": 319,
+	"name": "El Hajeb",
+	"id_region": 39
+}, {
+	"_id": "59cb861f715289b59306c9c8",
+	"id_province": 320,
+	"name": "El Jadida",
+	"id_region": 42
+}, {
+	"_id": "59cb861f715289b59306c9c9",
+	"id_province": 322,
+	"name": "Errachidia",
+	"id_region": 44
+}, {
+	"_id": "59cb861f715289b59306c9d1",
+	"id_province": 323,
+	"name": "Essaouira",
+	"id_region": 43
+}, {
+	"_id": "59cb861f715289b59306c9d2",
+	"id_province": 353,
+	"name": "Salé",
+	"id_region": 40
+}, {
+	"_id": "59cb861f715289b59306c9d6",
+	"id_province": 324,
+	"name": "Es-Semara",
+	"id_region": 47
+}, {
+	"_id": "59cb861f715289b59306c9d7",
+	"id_province": 339,
+	"name": "Larache",
+	"id_region": 37
+}, {
+	"_id": "59cb861f715289b59306c9d8",
+	"id_province": 340,
+	"name": "Marrakech",
+	"id_region": 43
+}, {
+	"_id": "59cb861f715289b59306c9d9",
+	"id_province": 341,
+	"name": "Mediouna",
+	"id_region": 42
+}, {
+	"_id": "59cb861f715289b59306c9dc",
+	"id_province": 342,
+	"name": "Midelt",
+	"id_region": 44
+}, {
+	"_id": "59cb861f715289b59306c9dd",
+	"id_province": 343,
+	"name": "Mohammadia",
+	"id_region": 42
+}, {
+	"_id": "59cb861f715289b59306c9de",
+	"id_province": 344,
+	"name": "Nador",
+	"id_region": 38
+}, {
+	"_id": "59cb861f715289b59306c9e7",
+	"id_province": 345,
+	"name": "Nouaceur",
+	"id_region": 42
+}, {
+	"_id": "59cb861f715289b59306c9e8",
+	"id_province": 346,
+	"name": "Oued-Ed-Dahab",
+	"id_region": 48
+}, {
+	"_id": "59cb861f715289b59306c9e9",
+	"id_province": 347,
+	"name": "Ouarzazate",
+	"id_region": 44
+}, {
+	"_id": "59cb861f715289b59306ca0a",
+	"id_province": 348,
+	"name": "Ouezzane",
+	"id_region": 37
+}, {
+	"_id": "59cb861f715289b59306ca0b",
+	"id_province": 349,
+	"name": "Oujda-Angad",
+	"id_region": 38
+}, {
+	"_id": "59cb861f715289b59306ca0d",
+	"id_province": 350,
+	"name": "Rabat",
+	"id_region": 40
+}, {
+	"_id": "59cb861f715289b59306ca0f",
+	"id_province": 351,
+	"name": "Rehamna",
+	"id_region": 43
+}, {
+	"_id": "59cb861f715289b59306ca1d",
+	"id_province": 352,
+	"name": "Safi",
+	"id_region": 43
+}, {
+	"_id": "59cb861f715289b59306ca1e",
+	"id_province": 354,
+	"name": "Sefrou",
+	"id_region": 39
+}, {
+	"_id": "59cb861f715289b59306ca26",
+	"id_province": 362,
+	"name": "Tan-Tan",
+	"id_region": 46
+}, {
+	"_id": "59cb861f715289b59306ca27",
+	"id_province": 306,
+	"name": "Assa-Zag",
+	"id_region": 46
+}, {
+	"_id": "59cb861f715289b59306ca28",
+	"id_province": 338,
+	"name": "Laayoune",
+	"id_region": 47
+}, {
+	"_id": "59cb861f715289b59306ca29",
+	"id_province": 312,
+	"name": "Boujdour",
+	"id_region": 47
+}, {
+	"_id": "59cb861f715289b59306ca2a",
+	"id_province": 365,
+	"name": "Tarfaya",
+	"id_region": 47
+}]

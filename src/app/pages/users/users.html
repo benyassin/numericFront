@@ -1,0 +1,90 @@
+<ngb-tabset type="pills" [justify]="fill">
+    <ngb-tab title="Users List">
+      <ng-template ngbTabContent>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Create User">
+      <ng-template ngbTabContent>
+            <form #f="ngForm" (ngSubmit)="createUser(f)">
+                    <div class="form-group row m-b-10">
+                            <label class="col-md-3 text-md-right col-form-label">Username: </label>
+                            <div class="col-md-6">
+                                <input type="text" [(ngModel)]="user.username" name="name" placeholder="Username" class="form-control">
+                            </div>
+                    </div>
+                    <div class="form-group row m-b-10">
+                            <label class="col-md-3 text-md-right col-form-label">Password</label>
+                            <div class="col-md-6">
+                                <input type="password" [(ngModel)]="user.password"  name="password" placeholder="Password" class="form-control">
+                            </div>
+                    </div>
+                    <div class="form-group row m-b-10">
+                            <label class="col-md-3 text-md-right col-form-label">Email</label>
+                            <div class="col-md-6">
+                                <input type="text" [(ngModel)]="user.email" name="email" placeholder="email" class="form-control">
+                            </div>
+                    </div>
+                    <div class="form-group row m-b-10">
+                            <label class="col-md-3 text-md-right col-form-label">First Name</label>
+                            <div class="col-md-6">
+                                <input type="text" [(ngModel)]="user.first_name" name="first_name" placeholder="First Name" class="form-control">
+                            </div>
+                    </div>
+                    <div class="form-group row m-b-10">
+                            <label class="col-md-3 text-md-right col-form-label">Last Name</label>
+                            <div class="col-md-6">
+                                <input type="text" [(ngModel)]="user.last_name"  name="last_name" placeholder="Last name" class="form-control">
+                            </div>
+                    </div>
+                    <div class="form-group row m-b-10">
+                            <label class="col-md-3 text-md-right col-form-label">Phone</label>
+                            <div class="col-md-6">
+                                <input type="text" [(ngModel)]="user.phone" name="phone" placeholder="Phone" class="form-control">
+                            </div>
+                    </div>
+                    <div class="form-group row m-b-10">
+                            <label class="col-md-3 text-md-right col-form-label">Region</label>
+                            <div class="col-md-6">
+                                <select [(ngModel)]="user.region" name="role" class="form-control">
+                                    <option *ngFor="let r of region" value="r.id_region">{{r.name}}</option>
+                                  </select>
+                            </div>
+                    </div>
+                    <div class="form-group row m-b-10">
+                            <label class="col-md-3 text-md-right col-form-label">Province</label>
+                            <div class="col-md-6">
+                                <select [(ngModel)]="user.province" name="role" class="form-control">
+                                    
+                                    <option *ngFor="let p of province" value="p.id_province">{{p.name}}</option>
+
+                                  </select>
+                            </div>
+                    </div>
+                    <div class="form-group row m-b-10">
+                            <label class="col-md-3 text-md-right col-form-label">Commune</label>
+                            <div class="col-md-6">
+                                <select [(ngModel)]="user.commune" name="role" class="form-control">
+                                    
+                                    <option *ngFor="let c of commune" value="c.id_commune">{{c.name}}</option>
+
+                                  </select>
+                            </div>
+                    </div>
+                    <div class="form-group row m-b-10">
+                            <label class="col-md-3 text-md-right col-form-label">Role</label>
+                            <div class="col-md-6">
+                                <select [(ngModel)]="user.role" name="role" class="form-control">
+                                    <option value="regional">Regional</option>
+                                    <option value="provincial">Provincial</option>
+                                    <option value="editeur">Agent</option>
+                                  </select>
+                            </div>
+                    </div>
+
+
+      <button class="btn btn-white" (click)="c('Close click')"> Fermer</button>
+      <a href="javascript:;" (click)=createUser() type="submit" class="btn btn-success">Créer</a>
+</form>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
