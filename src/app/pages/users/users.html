@@ -1,21 +1,30 @@
 <ngb-tabset type="pills" [justify]="fill">
-    <ngb-tab title="Users List">
+    <ngb-tab title="Liste des utilisateurs">
       <ng-template ngbTabContent>
+
       </ng-template>
     </ngb-tab>
-    <ngb-tab title="Create User">
+    <ngb-tab title="Créer un nouveau utilisateur">
       <ng-template ngbTabContent>
             <form #f="ngForm" (ngSubmit)="createUser(f)">
                     <div class="form-group row m-b-10">
-                            <label class="col-md-3 text-md-right col-form-label">Username: </label>
+                            <label class="col-md-3 text-md-right col-form-label">Login </label>
                             <div class="col-md-6">
-                                <input type="text" [(ngModel)]="user.username" name="name" placeholder="Username" class="form-control">
+                                <input type="text" [(ngModel)]="user.login" name="login" #login="ngModel" placeholder="Login" class="form-control" required minlength="4">
+                                <div *ngIf="login.invalid && (login.dirty || login.touched)" class="alert alert-danger">                
+                                    <div *ngIf="login.errors.required">  Login is required. </div>
+                                    <div *ngIf="login.errors.minlength"> Login must be at least 4 characters long.  </div>
+                                </div>
                             </div>
                     </div>
                     <div class="form-group row m-b-10">
-                            <label class="col-md-3 text-md-right col-form-label">Password</label>
+                            <label class="col-md-3 text-md-right col-form-label">Mot de passe</label>
                             <div class="col-md-6">
-                                <input type="password" [(ngModel)]="user.password"  name="password" placeholder="Password" class="form-control">
+                                <input type="password" [(ngModel)]="user.password"  name="password" placeholder="Mot de passe" class="form-control" #pass="ngModel" required minlength="6">
+                                <div *ngIf="pass.invalid && (pass.dirty || pass.touched)" class="alert alert-danger">
+                                    <div *ngIf="pass.errors.required"> password is required. </div>
+                                    <div *ngIf="pass.errors.minlength"> password must be at least 6 characters long. </div>
+                                </div>
                             </div>
                     </div>
                     <div class="form-group row m-b-10">
@@ -25,15 +34,15 @@
                             </div>
                     </div>
                     <div class="form-group row m-b-10">
-                            <label class="col-md-3 text-md-right col-form-label">First Name</label>
+                            <label class="col-md-3 text-md-right col-form-label">Nom</label>
                             <div class="col-md-6">
-                                <input type="text" [(ngModel)]="user.first_name" name="first_name" placeholder="First Name" class="form-control">
+                                <input type="text" [(ngModel)]="user.nom" name="nom" placeholder="Nom" class="form-control">
                             </div>
                     </div>
                     <div class="form-group row m-b-10">
-                            <label class="col-md-3 text-md-right col-form-label">Last Name</label>
+                            <label class="col-md-3 text-md-right col-form-label">Prénom</label>
                             <div class="col-md-6">
-                                <input type="text" [(ngModel)]="user.last_name"  name="last_name" placeholder="Last name" class="form-control">
+                                <input type="text" [(ngModel)]="user.prenom"  name="prenom" placeholder="Prénom" class="form-control">
                             </div>
                     </div>
                     <div class="form-group row m-b-10">
@@ -43,48 +52,48 @@
                             </div>
                     </div>
                     <div class="form-group row m-b-10">
+                        <label class="col-md-3 text-md-right col-form-label">Rôle</label>
+                        <div class="col-md-6">
+                            <select [(ngModel)]="user.role" name="role" class="form-control" (change)="onRoleChange($event.target.value)">
+                                <option value="visualisation" disabled>-Visualisation-</option>
+                                <option value="national">National</option>
+                                <option value="regional">Régional</option>
+                                <option value="edition" disabled>-Edition-</option>
+                                <option value="controleur">Contrôleur</option>
+                                <option value="agent">Agent</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row m-b-10">
                             <label class="col-md-3 text-md-right col-form-label">Region</label>
                             <div class="col-md-6">
-                                <select [(ngModel)]="user.region" name="role" class="form-control">
-                                    <option *ngFor="let r of region" value="r.id_region">{{r.name}}</option>
+                                <select [(ngModel)]="user.region" name="role" class="form-control" (change)="onRegionChange($event.target.value)" [attr.disabled]="regionDisabled">
+                                    <option *ngFor="let r of region" value={{r.id_region}}>{{r.nom}}</option>
                                   </select>
                             </div>
                     </div>
                     <div class="form-group row m-b-10">
                             <label class="col-md-3 text-md-right col-form-label">Province</label>
                             <div class="col-md-6">
-                                <select [(ngModel)]="user.province" name="role" class="form-control">
-                                    
-                                    <option *ngFor="let p of province" value="p.id_province">{{p.name}}</option>
-
+                                <select [(ngModel)]="user.province" name="role" class="form-control" (change)="onProvinceChange($event.target.value)" [attr.disabled]="provinceDisabled">
+                                    <option *ngFor="let p of province" value={{p.id_province}}>{{p.nom}}</option>
                                   </select>
                             </div>
                     </div>
                     <div class="form-group row m-b-10">
                             <label class="col-md-3 text-md-right col-form-label">Commune</label>
                             <div class="col-md-6">
-                                <select [(ngModel)]="user.commune" name="role" class="form-control">
-                                    
-                                    <option *ngFor="let c of commune" value="c.id_commune">{{c.name}}</option>
-
+                                <select [(ngModel)]="user.commune" name="role" class="form-control" [attr.disabled]="communeDisabled">                       
+                                    <option *ngFor="let c of commune" value={{c.id_commune}}>{{c.nom}}</option>
                                   </select>
                             </div>
                     </div>
-                    <div class="form-group row m-b-10">
-                            <label class="col-md-3 text-md-right col-form-label">Role</label>
-                            <div class="col-md-6">
-                                <select [(ngModel)]="user.role" name="role" class="form-control">
-                                    <option value="regional">Regional</option>
-                                    <option value="provincial">Provincial</option>
-                                    <option value="editeur">Agent</option>
-                                  </select>
-                            </div>
-                    </div>
+                   
 
+                <button class="btn btn-white" (click)="c('Close click')">Fermer</button>
+                <a href="javascript:;" (click)=createUser() type="submit" class="btn btn-success">Créer</a>
 
-      <button class="btn btn-white" (click)="c('Close click')"> Fermer</button>
-      <a href="javascript:;" (click)=createUser() type="submit" class="btn btn-success">Créer</a>
-</form>
+            </form>
       </ng-template>
     </ngb-tab>
   </ngb-tabset>

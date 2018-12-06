@@ -1,14 +1,15 @@
+<h1>Editeur</h1>
 <div class="panel">
     <div class="panel-body">
         <div id="map2" style="height: 700px"></div>
     </div>
 </div>
 
-<div id="sidebar" class="leaflet-sidebar collapsed" style="height: 500px">
+<div id="sidebar" class="leaflet-sidebar collapsed" style="height: 500px; z-index: 888;">
     <!-- Nav tabs -->
     <div class="leaflet-sidebar-tabs">
         <ul role="tablist"> <!-- top aligned tabs -->
-            <li><a href="#home" role="tab"><i class="fa fa-gear"></i></a></li>
+            <li><a href="#home" role="tab"><i class="fa fa-layer-group"></i></a></li>
         </ul>
 
     </div>
@@ -17,49 +18,70 @@
     <div class="leaflet-sidebar-content">
         <div class="leaflet-sidebar-pane" id="home">
             <h1 class="leaflet-sidebar-header">
-                Configuration
+                Légende
                 <div class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></div>
             </h1>
-              <b><u>Strate</u></b>
+              <b><u>Strates</u></b>
             <div>
+                
             <input name="strate10" type="checkbox" value="10" (change)="checkboxChange($event)"/>
-            <label for="strate10">Strate 10 (TERRES DE CULTURES NON IRRIGUEES)</label>
+            <label for="strate10">
+                <div style="background-color: red;width:30px;height: 11px;display: inline-block;"></div>
+                Strate 10 (TERRES DE CULTURES NON IRRIGUEES)</label>
             </div>
             <div>
             <input name="strate20" type="checkbox" value="20" (change)="checkboxChange($event)" />
-            <label for="strate20">Strate 20 (TERRES DE CULTURES  IRRIGUEES)</label>
+            <label for="strate20">
+                <div style="background-color: blue;width:30px;height: 11px;display: inline-block;"></div>
+                Strate 20 (TERRES DE CULTURES  IRRIGUEES)</label>
             </div>
             <div>
             <input name="strate30" type="checkbox" value="30" (change)="checkboxChange($event)" />
-            <label for="strate30">Strate 30 (PLANTATIONS FRUITIERES)</label>
+            <label for="strate30">
+                <div style="background-color: green;width:30px;height: 11px;display: inline-block;"></div>
+                Strate 30 (PLANTATIONS FRUITIERES)</label>
             </div>
             <div>
             <input name="strate40" type="checkbox" value="40" (change)="checkboxChange($event)" />
-            <label for="strate40">Strate 40 (DOMAINE FORESTIER)</label>
+            <label for="strate40">
+                <div style="background-color: yellow;width:30px;height: 11px;display: inline-block;"></div>
+                Strate 40 (DOMAINE FORESTIER)</label>
             </div>
             <div>
             <input name="strate50" type="checkbox" value="50" (change)="checkboxChange($event)" />
-            <label for="strate50">Strate 50 (TERRES DE PARCOURS)</label>
+            <label for="strate50">
+                <div style="background-color: black;width:30px;height: 11px;display: inline-block;"></div>
+                Strate 50 (TERRES DE PARCOURS)</label>
             </div>
             <div>
             <input name="strate60" type="checkbox" value="60" (change)="checkboxChange($event)" />
-            <label for="strate60">Strate 60 (PETITES VILLES)</label>
+            <label for="strate60">
+                <div style="background-color: olive;width:30px;height: 11px;display: inline-block;"></div>
+                Strate 60 (PETITES VILLES)</label>
             </div>
             <div>
             <input name="strate70" type="checkbox" value="70" (change)="checkboxChange($event)" />
-            <label for="strate70">Strate 70 (GRANDES VILLES)</label>
+            <label for="strate70">
+                <div style="background-color: orange;width:30px;height: 11px;display: inline-block;"></div>
+                Strate 70 (GRANDES VILLES)</label>
             </div>
             <div>
             <input name="strate80" type="checkbox" value="80" (change)="checkboxChange($event)" />
-            <label for="strate80">Strate 80 (GROS DOUARS)</label>
+            <label for="strate80">
+                <div style="background-color: aqua;width:30px;height: 11px;display: inline-block;"></div>
+                Strate 80 (GROS DOUARS)</label>
             </div>
             <div>
             <input name="strate90" type="checkbox" value="90" (change)="checkboxChange($event)" />
-            <label for="strate90">Strate 90 (TERRES NON AGRICOLES)</label>
+            <label for="strate90">
+                <div style="background-color: brown;width:30px;height: 11px;display: inline-block;"></div>
+                Strate 90 (TERRES NON AGRICOLES)</label>
             </div>
             <div>
             <input name="strate100" type="checkbox" value="100" (change)="checkboxChange($event)" />
-            <label for="strate100">Strate 100 (EAU)</label>
+            <label for="strate100">
+                <div style="background-color: purple;width:30px;height: 11px;display: inline-block;"></div>
+                Strate 100 (EAU)</label>
             </div>
 
             <b><u>Couches de reférence</u></b>

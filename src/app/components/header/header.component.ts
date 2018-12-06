@@ -15,6 +15,10 @@ export class HeaderComponent implements OnDestroy {
 	@Output() toggleMobileRightSidebar = new EventEmitter<boolean>();
 	pageSettings = pageSettings;
 
+	constructor(private renderer: Renderer2, private modalService: NgbModal, private router: Router) {
+
+	}
+
   mobileSidebarToggle() {
 		this.toggleMobileSidebar.emit(true);
   }
@@ -24,13 +28,7 @@ export class HeaderComponent implements OnDestroy {
 	toggleSidebarRight() {
 		this.toggleSidebarRightCollapsed.emit(true);
 	}
-	open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      // this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      // this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
+
 	mobileTopMenuToggle() {
 	  this.pageSettings.pageMobileTopMenuToggled = !this.pageSettings.pageMobileTopMenuToggled;
 	}
@@ -39,14 +37,22 @@ export class HeaderComponent implements OnDestroy {
 	  this.pageSettings.pageMobileMegaMenuToggled = !this.pageSettings.pageMobileMegaMenuToggled;
 	}
 
-	ngOnDestroy() {
-	  this.pageSettings.pageMobileTopMenuToggled = false;
-	  this.pageSettings.pageMobileMegaMenuToggled = false;
+	open(content) {
+		this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+			// this.closeResult = `Closed with: ${result}`;
+		}, (reason) => {
+			// this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+		});
 	}
+
+	
 	switch(){
 		this.router.navigate(['/main']);
 	}
-  constructor(private renderer: Renderer2, private modalService: NgbModal,private router: Router) {
 
-  }
+	ngOnDestroy() {
+		this.pageSettings.pageMobileTopMenuToggled = false;
+		this.pageSettings.pageMobileMegaMenuToggled = false;
+	}
+  
 }

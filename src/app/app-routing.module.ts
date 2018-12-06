@@ -87,52 +87,55 @@ import { TableDataPage }           from './pages/tables/table-data/table-data';
 import { FormStuffPage }         from './pages/form-stuff/form-stuff';
 import { MainComponent } from './pages/main/main';
 import { LoginPage } from './pages/login/login';
+import { VisiteurComponent } from './pages/visiteur/visiteur';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard/v2', pathMatch: 'full' },
+  // { path: '', redirectTo: '/dashboard/v2', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  // { path: '/', redirectTo: '/login', pathMatch: 'full' },
 
   { path: 'dashboard/v1', component: DashboardV1Page, data: { title: 'Dashboard V1'} },
   { path: 'dashboard/v2', component: DashboardV2Page, data: { title: 'Dashboard V2'} },
 
-  { path: 'email/inbox', component: EmailInboxPage, data: { title: 'Email Inbox'} },
-  { path: 'email/compose', component: EmailComposePage, data: { title: 'Email Compose'} },
-  { path: 'email/detail', component: EmailDetailPage, data: { title: 'Email Detail'} },
+  // { path: 'email/inbox', component: EmailInboxPage, data: { title: 'Email Inbox'} },
+  // { path: 'email/compose', component: EmailComposePage, data: { title: 'Email Compose'} },
+  // { path: 'email/detail', component: EmailDetailPage, data: { title: 'Email Detail'} },
 
-  { path: 'widget', component: WidgetPage, data: { title: 'Widgets'} },
+  // { path: 'widget', component: WidgetPage, data: { title: 'Widgets'} },
 
-  { path: 'page-option/page-blank', component: PageBlank, data: { title: 'Blank Page'} },
-  { path: 'page-option/page-with-footer', component: PageFooter, data: { title: 'Page with Footer' } },
-  { path: 'page-option/page-without-sidebar', component: PageWithoutSidebar, data: { title: 'Page without Sidebar' } },
-  { path: 'page-option/page-with-right-sidebar', component: PageSidebarRight, data: { title: 'Page with Right Sidebar' } },
-  { path: 'page-option/page-with-minified-sidebar', component: PageSidebarMinified, data: { title: 'Page with Minified Sidebar'} },
-  { path: 'page-option/page-with-two-sidebar', component: PageTwoSidebar, data: { title: 'Page with Two Sidebar' } },
-  { path: 'page-option/page-full-height', component: PageFullHeight, data: { title: 'Full Height Content' } },
-  { path: 'page-option/page-with-wide-sidebar', component: PageSidebarWide, data: { title: 'Page with Wide Sidebar' } },
-  { path: 'page-option/page-with-light-sidebar', component: PageSidebarLight, data: { title: 'Page with Light Sidebar' } },
-  { path: 'page-option/page-with-transparent-sidebar', component: PageSidebarTransparent, data: { title: 'Page with Transparent Sidebar' } },
-  { path: 'page-option/page-with-top-menu', component: PageTopMenu, data: { title: 'Page with Top Menu' } },
-  { path: 'page-option/page-with-mixed-menu', component: PageMixedMenu, data: { title: 'Page with Mixed Menu' } },
-  { path: 'page-option/page-with-boxed-layout', component: PageBoxedLayout, data: { title: 'Page with Boxed Layout' } },
-  { path: 'page-option/page-with-mega-menu', component: PageMegaMenu, data: { title: 'Page with Mega Menu' } },
-  { path: 'page-option/boxed-layout-with-mixed-menu', component: BoxedLayoutMixedMenu, data: { title: 'Boxed Layout with Mixed Menu' } },
+  // { path: 'page-option/page-blank', component: PageBlank, data: { title: 'Blank Page'} },
+  // { path: 'page-option/page-with-footer', component: PageFooter, data: { title: 'Page with Footer' } },
+  // { path: 'page-option/page-without-sidebar', component: PageWithoutSidebar, data: { title: 'Page without Sidebar' } },
+  // { path: 'page-option/page-with-right-sidebar', component: PageSidebarRight, data: { title: 'Page with Right Sidebar' } },
+  // { path: 'page-option/page-with-minified-sidebar', component: PageSidebarMinified, data: { title: 'Page with Minified Sidebar'} },
+  // { path: 'page-option/page-with-two-sidebar', component: PageTwoSidebar, data: { title: 'Page with Two Sidebar' } },
+  // { path: 'page-option/page-full-height', component: PageFullHeight, data: { title: 'Full Height Content' } },
+  // { path: 'page-option/page-with-wide-sidebar', component: PageSidebarWide, data: { title: 'Page with Wide Sidebar' } },
+  // { path: 'page-option/page-with-light-sidebar', component: PageSidebarLight, data: { title: 'Page with Light Sidebar' } },
+  // { path: 'page-option/page-with-transparent-sidebar', component: PageSidebarTransparent, data: { title: 'Page with Transparent Sidebar' } },
+  // { path: 'page-option/page-with-top-menu', component: PageTopMenu, data: { title: 'Page with Top Menu' } },
+  // { path: 'page-option/page-with-mixed-menu', component: PageMixedMenu, data: { title: 'Page with Mixed Menu' } },
+  // { path: 'page-option/page-with-boxed-layout', component: PageBoxedLayout, data: { title: 'Page with Boxed Layout' } },
+  // { path: 'page-option/page-with-mega-menu', component: PageMegaMenu, data: { title: 'Page with Mega Menu' } },
+  // { path: 'page-option/boxed-layout-with-mixed-menu', component: BoxedLayoutMixedMenu, data: { title: 'Boxed Layout with Mixed Menu' } },
 
-  { path: 'ui/general', component: UIGeneralPage, data: { title: 'UI General'} },
-  { path: 'ui/typography', component: UITypographyPage, data: { title: 'UI Typography'} },
-  { path: 'ui/tabs-accordions', component: UITabsAccordionsPage, data: { title: 'UI Tabs & Accordions'} },
-  { path: 'ui/modal-notification', component: UIModalNotificationPage, data: { title: 'UI Modal & Notification'} },
-  { path: 'ui/widget-boxes', component: UIWidgetBoxesPage, data: { title: 'UI Widget Boxes'} },
-  { path: 'ui/media-object', component: UIMediaObjectPage, data: { title: 'UI Media Object'} },
-  { path: 'ui/buttons', component: UIButtonsPage, data: { title: 'UI Buttons'} },
-  { path: 'ui/icons', component: UIIconsPage, data: { title: 'UI Icons'} },
-  { path: 'ui/simple-line-icons', component: UISimpleLineIconsPage, data: { title: 'UI SimpleLineIcons'} },
-  { path: 'ui/ionicons', component: UIIoniconsPage, data: { title: 'UI Ionicons'} },
-  { path: 'ui/language-icon', component: UILanguageIconPage, data: { title: 'UI Language Bar Icon'} },
-  { path: 'ui/social-buttons', component: UISocialButtonsPage, data: { title: 'UI Social Buttons'} },
+  // { path: 'ui/general', component: UIGeneralPage, data: { title: 'UI General'} },
+  // { path: 'ui/typography', component: UITypographyPage, data: { title: 'UI Typography'} },
+  // { path: 'ui/tabs-accordions', component: UITabsAccordionsPage, data: { title: 'UI Tabs & Accordions'} },
+  // { path: 'ui/modal-notification', component: UIModalNotificationPage, data: { title: 'UI Modal & Notification'} },
+  // { path: 'ui/widget-boxes', component: UIWidgetBoxesPage, data: { title: 'UI Widget Boxes'} },
+  // { path: 'ui/media-object', component: UIMediaObjectPage, data: { title: 'UI Media Object'} },
+  // { path: 'ui/buttons', component: UIButtonsPage, data: { title: 'UI Buttons'} },
+  // { path: 'ui/icons', component: UIIconsPage, data: { title: 'UI Icons'} },
+  // { path: 'ui/simple-line-icons', component: UISimpleLineIconsPage, data: { title: 'UI SimpleLineIcons'} },
+  // { path: 'ui/ionicons', component: UIIoniconsPage, data: { title: 'UI Ionicons'} },
+  // { path: 'ui/language-icon', component: UILanguageIconPage, data: { title: 'UI Language Bar Icon'} },
+  // { path: 'ui/social-buttons', component: UISocialButtonsPage, data: { title: 'UI Social Buttons'} },
 
-  { path: 'bootstrap-4', component: Bootstrap4Page, data: { title: 'Bootstrap 4'} },
+  // { path: 'bootstrap-4', component: Bootstrap4Page, data: { title: 'Bootstrap 4'} },
 
-  { path: 'chart/ngx', component: ChartNgxPage, data: { title: 'Chart Flot'} },
-  { path: 'chart/d3', component: ChartD3Page, data: { title: 'Chart D3'} },
+  // { path: 'chart/ngx', component: ChartNgxPage, data: { title: 'Chart Flot'} },
+  // { path: 'chart/d3', component: ChartD3Page, data: { title: 'Chart D3'} },
 
   { path: 'calendar', component: CalendarPage, data: { title: 'Calendar'} },
 
@@ -160,7 +163,8 @@ const routes: Routes = [
   { path: 'table/data', component: TableDataPage, data: { title: 'Ngx DataTable'} },
 
   { path: 'form-stuff', component: FormStuffPage, data: { title: 'Form Stuff'} },
-  {path: 'main', component: MainComponent, data: {title: 'Main Page'}}
+  {path: 'main', component: MainComponent, data: {title: 'Main Page'}},
+  { path: 'visiteur', component: VisiteurComponent, data: {title: 'Visualisation'}}
 ];
 
 @NgModule({

@@ -7,7 +7,6 @@ import { HttpClient } from '@angular/common/http';
 import { ReplaySubject } from 'rxjs';
 import {Login} from './login.interface';
 @Component({
-    // tslint:disable-next-line:component-selector
     selector: 'login',
     templateUrl: './login.html'
 })
@@ -16,14 +15,12 @@ import {Login} from './login.interface';
 export class LoginPage implements OnDestroy {
   pageSettings = pageSettings;
     Login: Login = {
-        username: null,
+        login: null,
         password: null
     };
     error: any;
 
-  constructor(private router: Router,
-    private renderer: Renderer2,
-    private Authorzation: AuthorizationService, private httpClient: HttpClient) {
+  constructor(private router: Router, private renderer: Renderer2, private Authorzation: AuthorizationService, private httpClient: HttpClient) {
     this.pageSettings.pageEmpty = true;
     this.renderer.addClass(document.body, 'bg-white');
   }
@@ -35,17 +32,27 @@ export class LoginPage implements OnDestroy {
 
   formSubmit(f: NgForm) {
       if (f.valid) {
-        this.Authorzation.login(f.value.username, f.value.password)
+        this.Authorzation.login(f.value.login, f.value.password)
         .subscribe(
             data => {
+              console.log("login data");
+                console.log(data);
+                // Cette fct doit retourner ttes les infos du User connecté 
+                // et donc selon son rôle on gère sur quel page il doit naviguer et avec quels informations 
+              if (data.role == "agent" || data.role =="controleur"){
                 this.router.navigate(['main']);
+              }else{
+                this.router.navigate(['visiteur']);
+              }
+                
+                // this.router.navigate(['main'], { queryParams: { popup: true, mode: "visit" } });
             },
             err => {
                 console.log(err);
                 this.error = err.error.error;
             });
       }
-    // this.Authorzation.login('vaeron', '994971crea');
-    // this.router.navigate(['dashboard/v2']);
   }
+
+
 }

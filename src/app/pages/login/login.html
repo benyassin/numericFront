@@ -4,7 +4,7 @@
     <div class="news-feed">
         <div class="news-image" style="background-image: url(../assets/img/login-bg/login-bg-11.jpg)"></div>
         <div class="news-caption">
-            <h4 class="caption-title"><b>Numerisation</b> MAPM</h4>
+            <h4 class="caption-title"><b>Numerisation</b> MAPMDERF</h4>
             <p>
                 <!-- Download the Color Admin app for iPhone®, iPad®, and Android™. Lorem ipsum dolor sit amet, consectetur adipiscing elit. -->
             </p>
@@ -16,7 +16,7 @@
         <!-- begin login-header -->
         <div class="login-header">
             <div class="brand">
-                <span class="logo"></span> <b>Numérisation</b> MAPM
+                <span class="logo"></span> <b>Numérisation</b> MAPMDERF
             </div>
             <div class="icon">
                 <i class="fa fa-sign-in"></i>
@@ -32,17 +32,17 @@
 
             <form #f="ngForm" (ngSubmit)="formSubmit(f)" class="margin-bottom-0">
                 <div class="form-group m-b-15">
-                    <input type="text" class="form-control form-control-lg is-valid" placeholder="Username" name='username' [(ngModel)]='Login.username' required />
+                    <input type="text" class="form-control form-control-lg is-valid" placeholder="Login" name='login' [(ngModel)]='Login.login' required />
                 </div>
                 <div class="form-group m-b-15">
                     <input type="password" class="form-control form-control-lg" placeholder="Password" name="password" [(ngModel)]='Login.password' required />
                 </div>
                 <div class="login-buttons">
-                    <button type="submit" class="btn btn-success btn-block btn-lg">Sign me in</button>
+                    <button type="submit" class="btn btn-success btn-block btn-lg">S'authentifier'</button>
                 </div>
-                <div class="m-t-20 m-b-40 p-b-40 text-inverse">
+                <!-- <div class="m-t-20 m-b-40 p-b-40 text-inverse">
                     Not a member yet? Click <a routerLink="/signup" class="text-success">here</a> to register.
-                </div>
+                </div> -->
                 <hr />
                 <p class="text-center text-grey-darker">
                     &copy; Geocoding All Right Reserved 2018

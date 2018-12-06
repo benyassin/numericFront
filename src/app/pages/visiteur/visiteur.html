@@ -1,0 +1,176 @@
+<!-- <h1>Visiteur</h1> -->
+<div class="panel">
+  <div class="panel-body">
+    <div id="map2" style="height: 700px"></div>
+  </div>
+</div>
+
+<div id="sidebar" class="leaflet-sidebar collapsed" style="height: 500px; z-index: 888;">
+  <!-- Nav tabs -->
+  <div class="leaflet-sidebar-tabs">
+    <ul role="tablist">
+      <!-- top aligned tabs -->
+      <li><a href="#home" role="tab"><i class="fa fa-layer-group"></i></a></li>
+      <li><a (click)="openModal(content)" role="tab"><i class="fa fa-atlas"></i></a></li>
+      <li><a (click)="openDownLoad(download)" role="tab"><i class="fas fa-cloud-download-alt"></i></a></li>
+      <!-- <li><a (click)="downloadFile()" role="tab"><i class="fas fa-cloud-download-alt"></i></a></li> -->
+    </ul>
+
+  </div>
+
+  <!-- Tab panes -->
+  <div class="leaflet-sidebar-content">
+    <div class="leaflet-sidebar-pane" id="home">
+      <h1 class="leaflet-sidebar-header">
+        Légende {{decoupageHidden}} - {{checkDecoupage}} -{{decoup}}
+        <div class="leaflet-sidebar-close"><i class="fa fa-caret-left"></i></div>
+      </h1>
+
+      <b [hidden]="decoupageHidden"><u>Découapge</u></b>
+       <div [hidden]="decoupageHidden">
+        <input name="decoupageLayer" type="checkbox" value="decoupageLayer" [(ngModel)]="decoup" (change)="checkboxChangeDecoupage($event)" [checked]="checkDecoupage"/>
+        <label for="decoupageLayer">
+          <div style="background-color: black;width:30px;height: 11px;display: inline-block;"></div>
+          {{decoupageLayer}}
+        </label>
+      </div>
+      
+      
+      <b><u>Strates</u></b>
+      <div>
+        <input name="strate10" type="checkbox" value="10" (change)="checkboxChange($event)" [checked]="checkStrate10" />
+        <label for="strate10">
+          <div style="background-color: red;width:30px;height: 11px;display: inline-block;"></div>
+          Strate 10 (TERRES DE CULTURES NON IRRIGUEES)
+        </label>
+      </div>
+      <div>
+        <input name="strate20" type="checkbox" value="20" (change)="checkboxChange($event)" [checked]="checkStrate20" />
+        <label for="strate20">
+          <div style="background-color: blue;width:30px;height: 11px;display: inline-block;"></div>
+          Strate 20 (TERRES DE CULTURES IRRIGUEES)
+        </label>
+      </div>
+      <div>
+        <input name="strate30" type="checkbox" value="30" (change)="checkboxChange($event)" [checked]="checkStrate30" />
+        <label for="strate30">
+          <div style="background-color: green;width:30px;height: 11px;display: inline-block;"></div>
+          Strate 30 (PLANTATIONS FRUITIERES)
+        </label>
+      </div>
+      <div>
+        <input name="strate40" type="checkbox" value="40" (change)="checkboxChange($event)" [checked]="checkStrate40" />
+        <label for="strate40">
+          <div style="background-color: yellow;width:30px;height: 11px;display: inline-block;"></div>
+          Strate 40 (DOMAINE FORESTIER)
+        </label>
+      </div>
+      <div>
+        <input name="strate50" type="checkbox" value="50" (change)="checkboxChange($event)" [checked]="checkStrate50" />
+        <label for="strate50">
+          <div style="background-color: Lime;width:30px;height: 11px;display: inline-block;"></div>
+          Strate 50 (TERRES DE PARCOURS)
+        </label>
+      </div>
+      <div>
+        <input name="strate60" type="checkbox" value="60" (change)="checkboxChange($event)" [checked]="checkStrate60" />
+        <label for="strate60">
+          <div style="background-color: olive;width:30px;height: 11px;display: inline-block;"></div>
+          Strate 60 (PETITES VILLES)
+        </label>
+      </div>
+      <div>
+        <input name="strate70" type="checkbox" value="70" (change)="checkboxChange($event)" [checked]="checkStrate70" />
+        <label for="strate70">
+          <div style="background-color: orange;width:30px;height: 11px;display: inline-block;"></div>
+          Strate 70 (GRANDES VILLES)
+        </label>
+      </div>
+      <div>
+        <input name="strate80" type="checkbox" value="80" (change)="checkboxChange($event)" [checked]="checkStrate80" />
+        <label for="strate80">
+          <div style="background-color: aqua;width:30px;height: 11px;display: inline-block;"></div>
+          Strate 80 (GROS DOUARS)
+        </label>
+      </div>
+      <div>
+        <input name="strate90" type="checkbox" value="90" (change)="checkboxChange($event)" [checked]="checkStrate90" />
+        <label for="strate90">
+          <div style="background-color: brown;width:30px;height: 11px;display: inline-block;"></div>
+          Strate 90 (TERRES NON AGRICOLES)
+        </label>
+      </div>
+      <div>
+        <input name="strate100" type="checkbox" value="100" (change)="checkboxChange($event)" [checked]="checkStrate100" />
+        <label for="strate100">
+          <div style="background-color: purple;width:30px;height: 11px;display: inline-block;"></div>
+          Strate 100 (EAU)
+        </label>
+      </div>
+
+      <b><u>Couches de reférence</u></b>
+      <div>
+        <input name="isChecked" type="checkbox" value="900" />
+        <label for="isChecked">RNA</label>
+      </div>
+      <div>
+        <input name="isChecked" type="checkbox" value="1000" (change)="checkboxChange($event)" />
+        <label for="isChecked">Occupation du sol</label>
+      </div>
+      <b><u>Couches de support</u></b>
+      <div>
+        <input name="isChecked" type="checkbox" value="901" />
+        <label for="isChecked">données ONSA</label>
+      </div>
+      <div>
+        <input name="isChecked" type="checkbox" value="1001" (change)="checkboxChange($event)" />
+        <label for="isChecked">ANCFCC</label>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- <users></users> -->
+
+<!-- Modal Download -->
+<ng-template #download let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Téléchargement</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-download (closeMod)="d('Cross click');" (zone)="d('Cross click');"></app-download>
+  </div>
+  <div class="modal-footer">
+    <!-- <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button> -->
+  </div>
+</ng-template>
+
+
+<!-- Modal Découapge -->
+<ng-template #content let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Découpage</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-choix-decoupage [decoupageH]="decoupageHistory" (closeMod)="d('Cross click');" (zone)="choosenZone($event);d('Cross click');"></app-choix-decoupage>
+  </div>
+  <div class="modal-footer">
+    <!-- <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button> -->
+  </div>
+</ng-template>
+
+
+<!-- Loader -->
+<div [class.hidden]="!show">
+  <div class="loader-overlay">
+    <div *ngIf="show" class="loader"></div>
+  </div>
+</div>

@@ -1,0 +1,213 @@
+<ngb-tabset  #t="ngbTabset" >
+  
+  <ngb-tab title="Découpage" id="decoupage" class="row justify-content-center">
+    <ng-template ngbTabContent>
+        <form #f="ngForm" (ngSubmit)="choixDecoupage(f)">
+          <div class="form-group row m-b-10">
+            <label class="col-md-3 text-md-right col-form-label">Region {{decoupage.region}}</label>
+            <div class="col-md-6">
+              <select [(ngModel)]="decoupage.region" name="role" class="form-control" (change)="onRegionChange($event.target.value)"
+                [attr.disabled]="regionDisabled">
+                <option [value]="null">-- Region --</option>
+                <option *ngFor="let r of region" [value]="r.id_region">{{r.nom}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row m-b-10">
+            <label class="col-md-3 text-md-right col-form-label">Province {{decoupage.province}}</label>
+            <div class="col-md-6">
+              <select [(ngModel)]="decoupage.province" name="role" class="form-control" (change)="onProvinceChange($event.target.value)">
+                <option [value]="null">-- Province --</option>
+                <option *ngFor="let p of province" [value]="p.id_province">{{p.nom}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row m-b-10">
+            <label class="col-md-3 text-md-right col-form-label">Commune {{decoupage.commune}}</label>
+            <div class="col-md-6">
+              <select [(ngModel)]="decoupage.commune" name="role" class="form-control">
+                <option [value]="null">-- Commune --</option>
+                <option *ngFor="let c of commune" [value]="c.id_commune">{{c.nom}}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row m-b-10">
+            <label class="col-md-3 text-md-right col-form-label"></label>
+            <div class="col-md-12">
+              
+              <!-- <div class="btn-group btn-group-toggle">
+                <label class="btn-primary" [ngClass]="{'btn-primary': hideStrateShowReference, 'btn-defaut': !hideStrateShowReference}"  ngbButtonLabel>
+                  <input type="radio" ngbButton [(ngModel)]="model.strate" name="strate" (click)="changeDataToDownLoad('strate');"> Données de Strates
+                </label>
+                <label class="btn-primary" [ngClass]="{'btn-primary': !hideStrateShowReference, 'btn-defaut': hideStrateShowReference}"  ngbButtonLabel>
+                  <input type="radio" ngbButton [(ngModel)]="model.reference" name="reference" (click)="changeDataToDownLoad('reference');"> Données de Référence
+                </label>
+              </div> -->
+
+              <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="model">
+                <label ngbButtonLabel class="btn-primary" [ngClass]="{'btn-primary': hideStrateShowReference, 'btn-defaut': !hideStrateShowReference}">
+                  <input ngbButton type="radio" [value]="strate" (click)="changeDataToDownLoad();"> Données de Strates
+                </label>
+                <label ngbButtonLabel class="btn-primary" [ngClass]="{'btn-primary': !hideStrateShowReference, 'btn-defaut': hideStrateShowReference}">
+                  <input ngbButton type="radio" value="reference" (click)="changeDataToDownLoad();"> Données de Référence
+                </label>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="form-group row m-b-10">
+            <label class="col-md-3 text-md-right col-form-label"></label>
+            <div class="col-md-12">
+              <div class="btn-group">
+                    <!-- <a class="btn btn-circle btn-icon-only btn-default" (click)="t.select('strate')">
+                      <i class="fa fa-chevron-left"></i>
+                    </a> -->
+                    <!-- <a class="btn btn-circle btn-icon-only btn-default" (click)="t.select('strate')"> -->
+                    <a class="btn btn-circle btn-icon-only btn-default" (click)="toRight()">
+                      <i class="fa fa-chevron-right"></i>
+                    </a>
+              </div>
+            </div>
+          </div>
+        </form>
+
+</ng-template>
+  </ngb-tab>
+
+  <ngb-tab title="Liste des Strates" id="strate" *ngIf="hideStrateShowReference" class="row justify-content-center">
+    <ng-template ngbTabContent>
+      <form #f="ngForm" (ngSubmit)="choixDecoupage(f)">
+ 
+        <div>
+          <input name="strate10" type="radio" value="10" (change)="listRadioChange($event)" [checked]="checkStrate10" [(ngModel)]="strateList" />
+          <label for="strate10">
+            <div style="background-color: red;width:30px;height: 11px;display: inline-block;"></div>
+            Strate 10 (TERRES DE CULTURES NON IRRIGUEES)
+          </label>
+        </div>
+        <div>
+          <input name="strate20" type="radio" value="20" (change)="listRadioChange($event)" [checked]="checkStrate20" [(ngModel)]="strateList" />
+          <label for="strate20">
+            <div style="background-color: blue;width:30px;height: 11px;display: inline-block;"></div>
+            Strate 20 (TERRES DE CULTURES IRRIGUEES)
+          </label>
+        </div>
+        <div>
+          <input name="strate30" type="radio" value="30" (change)="listRadioChange($event)" [checked]="checkStrate30" [(ngModel)]="strateList" />
+          <label for="strate30">
+            <div style="background-color: green;width:30px;height: 11px;display: inline-block;"></div>
+            Strate 30 (PLANTATIONS FRUITIERES)
+          </label>
+        </div>
+
+  
+        <div>
+          <input name="strate40" type="radio" value="40" (change)="listRadioChange($event)" [checked]="checkStrate40"  [(ngModel)]="strateList" />
+          <label for="strate40">
+            <div style="background-color: yellow;width:30px;height: 11px;display: inline-block;"></div>
+            Strate 40 (DOMAINE FORESTIER)
+          </label>
+        </div>
+        <div>
+          <input name="strate50" type="radio" value="50" (change)="listRadioChange($event)" [checked]="checkStrate50" [(ngModel)]="strateList" />
+          <label for="strate50">
+            <div style="background-color: Lime;width:30px;height: 11px;display: inline-block;"></div>
+            Strate 50 (TERRES DE PARCOURS)
+          </label>
+        </div>
+        <div>
+          <input name="strate60" type="radio" value="60" (change)="listRadioChange($event)" [checked]="checkStrate60" [(ngModel)]="strateList" />
+          <label for="strate60">
+            <div style="background-color: olive;width:30px;height: 11px;display: inline-block;"></div>
+            Strate 60 (PETITES VILLES)
+          </label>
+        </div>
+        <div>
+          <input name="strate70" type="radio" value="70" (change)="listRadioChange($event)" [checked]="checkStrate70" [(ngModel)]="strateList" />
+          <label for="strate70">
+            <div style="background-color: orange;width:30px;height: 11px;display: inline-block;"></div>
+            Strate 70 (GRANDES VILLES)
+          </label>
+        </div>
+        <div>
+          <input name="strate80" type="radio" value="80" (change)="listRadioChange($event)" [checked]="checkStrate80" [(ngModel)]="strateList" />
+          <label for="strate80">
+            <div style="background-color: aqua;width:30px;height: 11px;display: inline-block;"></div>
+            Strate 80 (GROS DOUARS)
+          </label>
+        </div>
+        <div>
+          <input name="strate90" type="radio" value="90" (change)="listRadioChange($event)" [checked]="checkStrate90" [(ngModel)]="strateList" />
+          <label for="strate90">
+            <div style="background-color: brown;width:30px;height: 11px;display: inline-block;"></div>
+            Strate 90 (TERRES NON AGRICOLES)
+          </label>
+        </div>
+        <div>
+          <input name="strate100" type="radio" value="100" (change)="listRadioChange($event)" [checked]="checkStrate100" [(ngModel)]="strateList"  />
+          <label for="strate100">
+            <div style="background-color: purple;width:30px;height: 11px;display: inline-block;"></div>
+            Strate 100 (EAU)
+          </label>
+        </div>
+
+        <div class="form-group row m-b-10">
+          <label class="col-md-3 text-md-right col-form-label"></label>
+          <div class="col-md-12">
+            <div class="btn-group">
+              <a class="btn btn-circle btn-icon-only btn-default" (click)="toLeft()">
+                <i class="fa fa-chevron-left"></i>
+              </a>
+              <a class="btn btn-circle btn-icon-only btn-default" (click)="t.select('reference')" *ngIf="!hideStrateShowReference">
+                <i class="fa fa-chevron-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row m-b-10">
+          <label class="col-md-3 text-md-right col-form-label"></label>
+          <div class="col-md-12">
+            <div class="btn-group">
+              <a href="javascript:;" (click)="closeModal();" class="btn btn-outline-dark">Fermer</a>
+              <a href="javascript:;" (click)="download();" class="btn btn-outline-primary">Télécharger</a>
+            </div>
+          </div>
+        </div>
+
+      </form>
+  
+    </ng-template>
+  </ngb-tab>
+
+  <ngb-tab title="Données de référence" id="reference" *ngIf="!hideStrateShowReference">
+    <ng-template ngbTabContent>
+    
+      <div class="form-group row m-b-10">
+        <label class="col-md-3 text-md-right col-form-label"></label>
+        <div class="col-md-12">
+          <div class="btn-group">
+            <a class="btn btn-circle btn-icon-only btn-default" (click)="toLeft()">
+              <i class="fa fa-chevron-left"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row m-b-10">
+        <label class="col-md-3 text-md-right col-form-label"></label>
+        <div class="col-md-12">
+          <div class="btn-group">
+            <a href="javascript:;" (click)="closeModal();" class="btn btn-outline-dark">Fermer</a>
+            <a href="javascript:;" (click)="download();" class="btn btn-outline-primary">Télécharger</a>
+          </div>
+        </div>
+      </div>
+
+    </ng-template>
+  </ngb-tab>
+
+</ngb-tabset>
+

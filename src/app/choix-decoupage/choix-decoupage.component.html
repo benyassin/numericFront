@@ -1,0 +1,53 @@
+<!-- <ngb-tabset type="pills" [justify]="fill">
+  
+  <ngb-tab title="Zone d'affichage">
+    <ng-template ngbTabContent> -->
+      <form #f="ngForm" (ngSubmit)="choixDecoupage(f)">
+        <div class="form-group row m-b-10">
+          <label class="col-md-3 text-md-right col-form-label">Region {{decoupage.region}}</label>
+          <div class="col-md-6">
+            <select [(ngModel)]="decoupage.region" name="role" class="form-control" (change)="onRegionChange($event.target.value)"
+              [attr.disabled]="regionDisabled">
+              <option [value]="null">-- Region --</option>
+              <option *ngFor="let r of region" [value]="r.id_region" >{{r.nom}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row m-b-10">
+          <label class="col-md-3 text-md-right col-form-label">Province {{decoupage.province}}</label>
+          <div class="col-md-6">
+            <select [(ngModel)]="decoupage.province" name="role" class="form-control" (change)="onProvinceChange($event.target.value)">
+              <option [value]="null">-- Province --</option>
+              <option *ngFor="let p of province" [value]="p.id_province">{{p.nom}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row m-b-10">
+          <label class="col-md-3 text-md-right col-form-label">Commune {{decoupage.commune}}</label>
+          <div class="col-md-6">
+            <select [(ngModel)]="decoupage.commune" name="role" class="form-control">
+              <option  [value]="null">-- Commune --</option>
+              <option *ngFor="let c of commune" [value]="c.id_commune">{{c.nom}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row m-b-10">
+          <label class="col-md-3 text-md-right col-form-label"></label>
+          <div class="col-md-12">
+          <div class="btn-group">
+            <a href="javascript:;" (click)="closeModal();" class="btn btn-outline-dark">Fermer</a>
+            <a href="javascript:;" (click)="choixDecoupage();" type="submit" class="btn btn-outline-primary">Sélectionner</a>
+          </div>
+          </div>
+        </div>
+
+
+
+        <!-- <button class="btn btn-white" (click)="c('Close click')">Fermer</button>
+        <a href="javascript:;" (click)=updateDecoupage() type="submit" class="btn btn-success">Sélectionner</a> -->
+
+      </form>
+    <!-- </ng-template>
+  </ngb-tab>
+</ngb-tabset> -->

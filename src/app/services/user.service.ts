@@ -4,26 +4,26 @@ import { Observable, ReplaySubject } from 'rxjs';
 import { BASE_URL } from '../config/globals';
 import { AuthorizationService } from './authorization.service';
 import { User } from './interfaces/user.interface';
+
 @Injectable()
 
-export class UserService {
-    constructor (
-        private httpClient: HttpClient,
-        private Authorization: AuthorizationService
-    ) {
-    }
 
+export class UserService {
+    constructor (private httpClient: HttpClient, private Authorization: AuthorizationService) { }
 
     createUser(user: User): Observable<any> {
         const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
         const body = new HttpParams()
-        .set('username', user.username)
+        .set('login', user.login)
         .set('password', user.password)
-        .set('first_name', user.first_name)
-        .set('last_name', user.last_name)
+        .set('nom', user.nom)
+        .set('prenom', user.prenom)
         .set('phone', user.phone)
         .set('role', user.role)
-        .set('email', user.email);
+        .set('email', user.email)
+        .set('region', String(user.region))
+        .set('province', String(user.province))
+        .set('commune', String(user.commune));
         const postObservable = this.httpClient.post(BASE_URL + '/users', body.toString(), {headers});
         
         return postObservable;

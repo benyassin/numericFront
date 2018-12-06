@@ -1,0 +1,88 @@
+
+<form #f="ngForm" (ngSubmit)="televerser(f)">
+    
+    <div class="form-group row m-b-10">
+      <label class="col-md-3 text-md-right col-form-label">Dénomination </label>
+      <div class="col-md-6">
+        <input type="text" [(ngModel)]="data.nom" name="nom" #nom="ngModel" placeholder="Dénomination" class="form-control"
+          required minlength="4">
+        <div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="alert alert-danger">
+          <div *ngIf="nom.errors.required"> Dénomination est obligatoire. </div>
+          <div *ngIf="nom.errors.minlength"> Dénomination doit avoir 4 caractères au minimum. </div>
+        </div>
+      </div>
+    </div>
+   
+    <div class="form-group row m-b-10">
+      <label class="col-md-3 text-md-right col-form-label"> GeoJSON </label>
+      
+      <div class="col-md-6">
+        <input type="file" name="file" ng2FileSelect [uploader]="uploader" ngf-max-size="20MB" [(ngModel)]="data.file" (change)="readFile($event)" />
+        <!-- <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length || nom.errors">
+          Uploader
+        </button> -->
+      </div>
+
+    </div>
+   
+  <div class="form-group row m-b-10">
+    <label class="col-md-3 text-md-right col-form-label"></label>
+    <div class="col-md-12">
+      <div class="btn-group">
+        <a href="javascript:;" (click)="closeModal();" class="btn btn-outline-dark">Fermer</a>
+        <button type="submit" class="btn btn-outline-primary" [disabled]="!uploader.getNotUploadedItems().length || nom.errors" >
+          Uploader
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+</form>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th width="50%">Ficher</th>
+      <th>Taille</th>
+      <th>Avancement</th>
+      <!-- <th>Status</th>
+      <th>Actions</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of uploader.queue">
+      <td><strong>{{ item?.file?.name }}</strong></td>
+      <td *ngIf="uploader.isHTML5" nowrap>{{ item?.file?.size/1024/1024 | number:'.2' }} MB</td>
+      <td *ngIf="uploader.isHTML5">
+        <div class="progress" style="margin-bottom: 0;">
+          <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': item.progress + '%' }"></div>
+        </div>
+      </td>
+      <td class="text-center">
+        <span *ngIf="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+        <span *ngIf="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+        <span *ngIf="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+      </td>
+      <td nowrap>
+        <button type="button" class="btn btn-success btn-xs" (click)="item.upload()" [disabled]="item.isReady || item.isUploading || item.isSuccess">
+          <span class="glyphicon glyphicon-upload"></span> Upload
+        </button>
+        <!-- <button type="button" class="btn btn-warning btn-xs" (click)="item.cancel()" [disabled]="!item.isUploading">
+          <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+        </button> -->
+        <button type="button" class="btn btn-danger btn-xs" (click)="item.remove()">
+          <span class="glyphicon glyphicon-trash"></span> Remove
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+  <div>
+    Queue progress:
+    <div class="progress" style="">
+      <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+    </div>
+  </div>

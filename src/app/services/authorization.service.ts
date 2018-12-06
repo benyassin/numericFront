@@ -4,6 +4,7 @@ import { environment } from '../../environments/environment';
 import { Observable, ReplaySubject } from 'rxjs';
 import { LoginResponse } from './interfaces/login-response.interface';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { BASE_URL } from '../config/globals';
 
 @Injectable({
   providedIn: 'root'
@@ -12,14 +13,13 @@ export class AuthorizationService {
   constructor (private httpClient: HttpClient, private jwtHelper: JwtHelperService) {
   }
 
-  loginCheckUrl = `http://localhost:8001/auth/`;
-  refreshTokenUrl = `http://localhost:8001/auth/refresh`;
+  loginCheckUrl = BASE_URL+`/auth/`;
+  refreshTokenUrl = BASE_URL +`/auth/refresh`;
 
-  login (username: string, password: string): Observable<LoginResponse> {
+  login (login: string, password: string): Observable<LoginResponse> {
     const body = new HttpParams()
-      .set('username', username)
+      .set('login', login)
       .set('password', password);
-
     const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
 
     const postObservable = this.httpClient.post<LoginResponse>(this.loginCheckUrl, body.toString(), { headers });
@@ -28,40 +28,43 @@ export class AuthorizationService {
     subject.subscribe((r: LoginResponse) => {
       this.setAccessToken(r.token);
       this.setRefreshToken(r.refresh_token);
+      this.setUserDetails({ role: r.role, region: r.region, province: r.province, commune: r.commune});
     }, (err) => {
       this.handleAuthenticationError(err);
     });
 
     postObservable.subscribe(subject);
     return subject;
+
   }
 
   refresh (): Observable<LoginResponse> {
-    const body = new HttpParams()
-        .set('refresh_token', this.getRefreshToken())
-        .set('username', 'vaeron');
+      const body = new HttpParams()
+          .set('refresh_token', this.getRefreshToken())
+          .set('login', 'vaeron');
 
-    const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+      const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
 
-    const refreshObservable = this.httpClient.post<LoginResponse>(this.refreshTokenUrl, body.toString(), { headers });
+      const refreshObservable = this.httpClient.post<LoginResponse>(this.refreshTokenUrl, body.toString(), { headers });
 
-    const refreshSubject = new ReplaySubject<LoginResponse>(1);
-    refreshSubject.subscribe((r: LoginResponse) => {
-      this.setAccessToken(r.token);
-      this.setRefreshToken(r.refresh_token);
-    }, (err) => {
-      this.handleAuthenticationError(err);
-      this.handleBadRefreshToken();
-    });
+      const refreshSubject = new ReplaySubject<LoginResponse>(1);
+      refreshSubject.subscribe((r: LoginResponse) => {
+        this.setAccessToken(r.token);
+        this.setRefreshToken(r.refresh_token);
+      }, (err) => {
+        this.handleAuthenticationError(err);
+        this.handleBadRefreshToken();
+      });
 
-    refreshObservable.subscribe(refreshSubject);
-    return refreshSubject;
+      refreshObservable.subscribe(refreshSubject);
+      return refreshSubject;
   }
-    handleBadRefreshToken(): any {
-        // show error message && switch to login page
-        console.log('move user to login page');
+  
+  handleBadRefreshToken(): any {
+      // show error message && switch to login page
+      console.log('move user to login page');
 
-    }
+  }
 
   logout () {
     this.setAccessToken(null);
@@ -92,7 +95,9 @@ export class AuthorizationService {
       localStorage.setItem('refresh_token', refreshToken);
     }
   }
+
   setUserDetails(user) {
+    console.log("useeeeeeeeeer= "+user);
     if (!user) {
       localStorage.removeItem('user');
     } else {

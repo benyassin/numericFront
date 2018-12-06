@@ -1,9 +1,12 @@
 export interface User {
-    username: string;
+    login: string;
     password: string;
-    first_name: string;
-    last_name: string;
+    nom: string;
+    prenom: string;
     email: string;
     role: string;
     phone: string;
+    region: number;
+    province: number;
+    commune: number;
 }

@@ -118,6 +118,8 @@ import { FormStuffPage }            from './pages/form-stuff/form-stuff';
 
 import { EventService } from './pages/calendar/event.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { NgHttpLoaderModule } from 'ng-http-loader';
+
 import { JWT_OPTIONS, JwtInterceptor, JwtModule } from '@auth0/angular-jwt';
 import { RefreshTokenInterceptor } from  './interceptors/refresh-token.interceptor';
 import { AuthorizationService } from './services/authorization.service';
@@ -127,6 +129,14 @@ import { LoginPage } from './pages/login/login';
 import { UsersComponent } from './pages/users/users';
 import { UserService } from './services/user.service';
 import { StrateService } from './services/strate.service';
+import { ChoixDecoupageComponent } from './choix-decoupage/choix-decoupage.component';
+import { VisiteurComponent } from './pages/visiteur/visiteur';
+
+import { ToastrModule } from 'ng6-toastr-notifications';
+import { DownloadComponent } from './pages/download/download.component';
+import { ReferenceComponent } from './pages/reference/reference.component';
+
+import { FileSelectDirective } from 'ng2-file-upload';
 
 
 export function tokenGetter() {
@@ -211,7 +221,12 @@ export function tokenGetter() {
 
     TableBasicPage,
     TableDataPage,
-    MainComponent
+    MainComponent,
+    ChoixDecoupageComponent,
+    VisiteurComponent,
+    DownloadComponent,
+    ReferenceComponent,
+    FileSelectDirective
   ],
   imports: [
     HttpModule,
@@ -237,13 +252,15 @@ export function tokenGetter() {
     MatTableModule,
     Ng2TableModule,
     HttpClientModule,
+    NgHttpLoaderModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
         whitelistedDomains: ['localhost:8001'],
         blacklistedRoutes: ['localhost:8001/auth/']
       }
-    })
+    }),
+    ToastrModule.forRoot()
   ],
   providers: [
     Title,

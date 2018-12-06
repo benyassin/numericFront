@@ -102,15 +102,22 @@
       </li> -->
       <li>
         <a (click)="switch()">
-          <i (click)="switch()" class="fa fa-gem fa-fw" ></i> Accueil
+          <i (click)="switch()" class="fa fa-home" ></i> Accueil
         </a>
       </li>
       <li>
         <a (click)="open(content)">
-          <i class="fa fa-gem fa-fw" ></i> Users
+          <i class="fa fa-users-cog" ></i> Utilisateurs
         </a>
       </li>
-      <li class="dropdown" ngbDropdown>
+
+      <li>
+        <a (click)="open(contentReference)">
+          <i class="fas fa-database"></i> Données de référence
+        </a>
+      </li>
+
+      <!-- <li class="dropdown" ngbDropdown>
         <a href="javascript:;" class="dropdown-toggle" ngbDropdownToggle>
           <i class="fa fa-database fa-fw"></i> New <b class="caret"></b>
         </a>
@@ -123,22 +130,24 @@
           <li class="divider"></li>
           <li><a href="javascript:;">One more separated link</a></li>
         </ul>
-      </li>
+      </li> -->
+
     </ul>
   </div>
   <!-- end mega-menu -->
 
   <!-- begin header-nav -->
   <ul class="navbar-nav navbar-right">
-    <li [ngClass]="[ (this.pageSettings.pageLanguageBar) ? 'hidden-xs' : '' ]">
+    <!-- <li [ngClass]="[ (this.pageSettings.pageLanguageBar) ? 'hidden-xs' : '' ]">
       <form class="navbar-form">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Enter keyword" />
           <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
         </div>
       </form>
-    </li>
-    <li class="dropdown" ngbDropdown>
+    </li> -->
+
+    <!-- <li class="dropdown" ngbDropdown>
       <a href="javascript:;" ngbDropdownToggle class="dropdown-toggle f-s-14">
         <i class="fa fa-bell"></i>
         <span class="label">5</span>
@@ -209,7 +218,8 @@
           <a href="javascript:;">View more</a>
         </li>
       </ul>
-    </li>
+    </li> -->
+    
     <li class="dropdown navbar-language" ngbDropdown *ngIf="this.pageSettings.pageLanguageBar">
       <a href="javascript:;" class="dropdown-toggle" ngbDropdownToggle>
         <span class="flag-icon flag-icon-us" title="us"></span>
@@ -249,9 +259,11 @@
   <!-- end header navigation right -->
 </div>
 <!-- end #header -->
+
+<!-- #START# Users Modal -->
 <ng-template #content let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <h4 class="modal-title" id="modal-basic-title">Gestion des utilisateurs</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -274,3 +286,22 @@
     <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
   </div>
 </ng-template>
+<!-- #END# Users Modal -->
+
+
+<!-- #START# données de référence Modal -->
+<ng-template #contentReference let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Données de référence</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-reference (closeMod)="d('Cross click');" (zone)="d('Cross click');"></app-reference>
+  </div>
+  <div class="modal-footer">
+    <!-- <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button> -->
+  </div>
+</ng-template>
+<!-- #END# données de référence Modal -->

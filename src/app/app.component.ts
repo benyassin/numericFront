@@ -5,6 +5,8 @@ import { Router, NavigationEnd, NavigationStart, ActivatedRoute } from '@angular
 import pageSettings from './config/page-settings';
 import * as global from './config/globals';
 
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,6 +16,7 @@ import * as global from './config/globals';
 export class AppComponent implements OnInit {
 
   pageSettings;
+
 
   ngOnInit() {
     // page settings
